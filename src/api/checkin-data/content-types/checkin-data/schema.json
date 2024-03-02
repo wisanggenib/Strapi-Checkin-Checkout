@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkin_datas",
+  "info": {
+    "singularName": "checkin-data",
+    "pluralName": "checkin-datas",
+    "displayName": "checkin data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "history_checkin"
+    },
+    "lat": {
+      "type": "string"
+    },
+    "long": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "CHECK_IN",
+        "CHECK_OUT"
+      ]
+    },
+    "outside_area": {
+      "type": "boolean"
+    }
+  }
+}
