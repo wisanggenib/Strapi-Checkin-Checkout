@@ -19,10 +19,24 @@ module.exports = {
   },
   async handleCheckIn(ctx, next) {
     try {
+      const { user } = ctx.state;
       const data = await strapi
         .service("api::check-distance.check-distance")
-        .handleCheckIn(ctx.request.body);
-      console.log(data, "data checkin");
+        .handleCheckIn(user, ctx.request.body);
+      // console.log(data, "data checkin");
+
+      ctx.body = data;
+    } catch (err) {
+      console.log(err)
+      ctx.badRequest("Post report controller error", { moreDetails: err });
+    }
+  },
+  async handleLastStatus(ctx, next) {
+    try {
+      const { user } = ctx.state;
+      const data = await strapi
+        .service("api::check-distance.check-distance")
+        .handleLastStatus(user);
 
       ctx.body = data;
     } catch (err) {

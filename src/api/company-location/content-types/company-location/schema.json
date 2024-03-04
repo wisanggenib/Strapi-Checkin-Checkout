@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_locations",
+  "info": {
+    "singularName": "company-location",
+    "pluralName": "company-locations",
+    "displayName": "company_location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "latitude": {
+      "type": "text"
+    },
+    "longitude": {
+      "type": "text"
+    }
+  }
+}
