@@ -18,5 +18,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: 'GET',
+      path: '/check-last-status',
+      handler: 'check-distance.handleLastStatus',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };
